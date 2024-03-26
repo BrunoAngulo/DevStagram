@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('titulo')
-    <p class="mt-3">Registrate en Connectify</p>
+    Registrate en Connectify
 @endsection
 @section('contenido')
     <div class="md:flex md:justify-center md:gap-10 md:items-center">

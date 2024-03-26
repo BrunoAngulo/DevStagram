@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('titulo')
-    <p class="mt-3">Inicia Sesion en Connectify</p>
+    Inicia Sesion en Connectify
 @endsection
 @section('contenido')
     <div class="md:flex md:justify-center md:gap-10 md:items-center">
@@ -32,7 +32,7 @@
                         id="password"
                         name="password"
                         type="password"
-                        placeholder="Tu nombre"
+                        placeholder="Tu password"
                         class="border p-3 w-full rounded-lg"
                     />
                     @error('password')
