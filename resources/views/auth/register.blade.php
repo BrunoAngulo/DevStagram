@@ -1,11 +1,11 @@
 @extends('layouts.app')
 @section('titulo')
-    Registrate en DevStagram
+    <p class="mt-3">Registrate en Connectify</p>
 @endsection
 @section('contenido')
     <div class="md:flex md:justify-center md:gap-10 md:items-center">
         <div class="md:w-4/12">
-            <img src="{{ asset('img/registrar.jpg') }}" alt="Imagen registro usuario">
+            <img src="{{ asset('img/register.jpg') }}" alt="Imagen registro usuario">
         </div>
         <div class="md:w-4/12 bg-white p-6 rounded-lg shadow-lg">
             <form action="{{ route('register')}}" method="POST" novalidate>
@@ -85,6 +85,11 @@
                     class="bg-sky-600 hover:bg-sky-700 uppercase font-bold w-full p-3 text-white rounded-lg"
                     />
             </form>
+            {{-- <div class="mt-4 w-full block">
+                <a href="{{ route('auth.redirect')}}" class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+                    Ingresa con Facebook
+                </a>
+            </div> --}}
         </div>
     </div>
 @endsection

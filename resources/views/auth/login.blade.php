@@ -1,11 +1,11 @@
 @extends('layouts.app')
 @section('titulo')
-    Inicia Sesion en DevStagram
+    <p class="mt-3">Inicia Sesion en Connectify</p>
 @endsection
 @section('contenido')
     <div class="md:flex md:justify-center md:gap-10 md:items-center">
         <div class="md:w-4/12">
-            <img src="{{ asset('img/registrar.jpg') }}" alt="Imagen login usuario">
+            <img src="{{ asset('img/login.jpg') }}" alt="Imagen login usuario">
         </div>
         <div class="md:w-4/12 bg-white p-6 rounded-lg shadow-lg">
             <form method="POST" action="{{ route('login') }}" novalidate>

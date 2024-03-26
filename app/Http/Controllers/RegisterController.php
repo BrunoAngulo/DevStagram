@@ -2,18 +2,24 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\Email;
 use App\Models\User;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use App\Mail\RegistrationMail;
 
 use function Pest\Laravel\get;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
+use Laravel\Socialite\Facades\Socialite;
 
 class RegisterController extends Controller
 {
     function index() {
     return view('auth.register');
-    }   
+    }
+
     function store(Request $request) {
         // dd($request);
         // dd($request->get('email'));
@@ -42,8 +48,18 @@ class RegisterController extends Controller
         // ]);
         //Otra forma para autenticar
         auth()->attempt($request->only('email','password'));
-
+        // Envía el correo electrónico al usuario que ha iniciado sesión
+        Mail::to($request->email)->send(new RegistrationMail($request->user()));
+        
         //Redireccionar
-        return redirect()->route('posts.index');
-    }  
+        return redirect()->route('home');
+    }
+
+    // function redirect(){    
+    //     return Socialite::driver('facebook')->redirect();
+    // }
+    // function callback(){
+    //     $user = Socialite::driver('facebook')->user();
+    //     dd($user);
+    // }
 }

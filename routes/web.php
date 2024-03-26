@@ -55,3 +55,11 @@ Route::get('/{user:username}', [PostController::class, 'index'])->name('posts.in
 //Siguiendo usuario
 Route::post('/{user:username}/follow',[FollowerController::class, 'store'])->name('users.follow');
 Route::delete('/{user:username}/unfollow',[FollowerController::class, 'destroy'])->name('users.unfollow');
+
+
+
+//Registro con facebook
+Route::get('/auth/redirect', [RegisterController::class, 'redirect'])->name('auth.redirect');
+Route::get('/auth/callback', [RegisterController::class, 'callback'])->name('auth.callback');
+
+

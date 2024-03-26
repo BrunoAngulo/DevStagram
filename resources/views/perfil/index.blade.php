@@ -24,7 +24,7 @@
                     @enderror
                 </div>
                 <div class="mb-5">
-                    <label id="                < class="mb-5">
+                    <label class="mb-5">
                     <label id="imagen" class="mb-2 block uppercase text-gray-500 font-bold">imagen</label>
                     <input 
                         id="imagen"
